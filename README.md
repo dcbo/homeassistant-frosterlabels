@@ -27,7 +27,7 @@ Here i show you howto setup the Brother QL 810W Label Printer.
 You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.
 ## 2. Transfer Templates to the Printer
   * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by  
-  * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br>
+  * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br />
     In the German Version it is done via `Datei/Vorlage übertragen/übertragen`
 ![Screenshot of P-Touch Editor](/images/transfer_editor.png)
   * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template as handles by the printer.
@@ -38,7 +38,7 @@ You'l find my templates is located in the folder p-touch-templates, this should 
 ## 3. Activate WiFi on the Printer
   * Set the Printer that it can be accessed via WiFi and write down his IP-Address e.g.: `203.0.113.80`
 ## 4. Test Template Print
-  * To test the Template-Printing via WiFi use any Unix Shell with netcat ant type:
-    `echo -e "^II\n^TS002\nBolognese\t550g\t22.02.2022\n^FF" | nc -N 203.0.113.80 9100`
+  * To test the Template-Printing via WiFi use any Unix Shell with netcat ant type:<br />
+    `echo -e "^II\n^TS002\nBolognese\t550g\t22.02.2022\n^FF" | nc -N 203.0.113.80 9100`<br />
     be sure to change the IP-Adress to the one of your printer.
-    
+
