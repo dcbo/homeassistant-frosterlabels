@@ -1,0 +1,24 @@
+type: entities
+entities:
+  - entity: input_text.label_produkt
+    name: Inhalt
+  - entity: input_text.label_menge
+  - entity: input_select.dose
+  - entity: input_select.form
+  - entity: input_select.deckel
+title: Froster-Labels
+footer:
+  type: buttons
+  entities:
+    - entity: input_text.label_produkt
+      icon: mdi:printer-pos
+      name: Print
+      tap_action:
+        action: call-service
+        service: script.print_froster_label
+    - entity: input_text.label_produkt
+      icon: mdi:printer-pos
+      name: Print & Add to List
+      tap_action:
+        action: call-service
+        service: script.print_froster_label_list

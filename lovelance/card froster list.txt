@@ -1,0 +1,4 @@
+type: todo-list
+entity: todo.gefrierer
+title: Gefrierer
+theme: Mushroom Shadow

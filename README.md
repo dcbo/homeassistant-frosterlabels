@@ -43,5 +43,76 @@ You'l find my templates is located in the folder p-touch-templates, this should 
     `echo -e "^II\n^TS002\nBolognese\t550g\t22.02.2022\n^FF" | nc -N 203.0.113.80 9100`<br />
     be sure to change the IP-Adress to the one of your printer.
 
-# Add Command to Home-Assistant to Print Template 
-As the Extension `python_script` does not support `import` we will store a python-skript in the `/config` Directory and call it with `shell-command`. 
+# Store python-script in /config folder
+  * Store the python-scripts <br />
+    `print_t1.py` and <br />
+    `print_t2.py` <br />
+    in the Config-Folder of your Home-Assistant installation<br /> (where your configuration.yaml is stored).
+  * Edit the python-scripts
+    * Change `host = '203.0.113.80'` to match the IP-Address of your Printer
+  * Test python-scripts by running the follwing commands
+    * `python3 print_t1.py -t "Hello World"`
+    * `python3 print_t2.py -p "Bolognese" -m "666g"`
+
+# Add Shell-Command to your configuration.yaml 
+<code yaml>
+shell_command:
+  # Print labels on Brother QL810W
+  print_t1: 'python print_t1.py -t "{{ states("input_text.label_text") }}"'
+  print_t2: 'python print_t2.py -p "{{ states("input_text.label_produkt") }}" -m "{{ states("input_text.label_menge") }}"'
+</code>
+
+# Add Helpers to Home-Assistant 
+I have Boxes in different Colors in square and rectangular and covers in other colors.<br />
+I store Box and Cover-Color as well as geometry to be able to find a desires box easier.<br />
+To mmet this requirements, we need the following Helpers, you can change them to meet your needs.<br />
+## Text
+  * `Helper/Add Helper/Text`
+    * "name": "Text"
+    * "min": 0,
+    * "max": 100,
+    * Edit Helper and set ID to `input_text.label_text` 
+  * `Helper/Add Helper/Text`
+    * "name": "Produkt"
+    * "min": 1,
+    * "max": 100,
+    * Edit Helper and set ID to `input_text.label_produkt` 
+  * `Helper/Add Helper/Text`
+    * "name": "Menge"
+    * "min": 0,
+    * "max": 10,
+    * Edit Helper and set ID to `input_text.label_menge` 
+## Dropdowns
+  * `Helper/Add Helper/Dropdown`
+    * "name": "Dose"
+    * "icon": "mdi:cog-box"
+    * "options": "transparent", "red", "green", "yellow", "blue"
+    * Edit Helper and set ID to `input_select.dose` 
+  * `Helper/Add Helper/Dropdown`
+    * "name": "Deckel"
+    * "icon": "mdi:checkbox-blank-circle-outline"
+    * "options": "green", "yellow", "blue"
+    * Edit Helper and set ID to `input_select.deckel` 
+  * `Helper/Add Helper/Dropdown`
+    * "name": "Form"
+    * "icon": "mdi:rectangle-outline"
+    * "options": "square", "rectangular"
+    * Edit Helper and set ID to `input_select.form` 
+    
+# Add three Scripts to Home-Assistant 
+You'll find the yaml-code of the scripts in the `/scripts`-directory.
+  * `Scripts/Add Scripts/Yaml`
+  * paste the scripts <br />
+    `Print Text Label.txt`, <br />
+    `Print Froster Label.txt` and <br />
+    `Print Froster Label List.txt` <br />
+  
+# Add cards to your Dashboard
+You'll find the yaml-code of the cards in the `/lovelance`-directory.
+  * `goto a dashboard of your coice`
+  * `edit`
+  * `add card` and choose any 
+  * activate `yaml`-mode 
+  * paste code from `/lovelance`-directory
+
+Have fun.
