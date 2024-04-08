@@ -36,13 +36,12 @@ There are two Templates
   * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by  
   * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br />
     In the German Version it is done via `Datei/Vorlage übertragen/übertragen`<br /><br />
-<img src="https://github.com/dcbo/homeassistant-frosterlabels/blob/2366b7e48d28963cee00840455355821c5e2fee6/images/transfer_editor.png" width="500"><br />
-
+![Screenshot of P-Touch Editor](/images/transfer_editor.png)<br />
   * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template position, wehre it is stored in the printer.
     * The Printer must bee connected via USB.
     * The Field `Schlüsselzuordnung` (maybe `keyvalue` in English) contains the numbers of the template as handled by the printer.
   * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) <br /><br />
-  <img src="https://github.com/dcbo/homeassistant-frosterlabels/blob/2366b7e48d28963cee00840455355821c5e2fee6/images/transfer_manager.png"><br />
+![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)<
 
 ## Activate WiFi on the Printer
   * Set the Printer that it can be accessed via WiFi and write down his IP-Address e.g.: `203.0.113.80`
@@ -124,7 +123,8 @@ You'll find the yaml-code of the cards in the `/lovelance`-directory.
   * `edit`
   * `add card` and choose any 
   * activate `yaml`-mode 
-  * paste code from `/lovelance`-directory
+  * paste code from `/lovelance`-directory<br /><br />
 
-<img src="https://github.com/dcbo/homeassistant-frosterlabels/blob/2366b7e48d28963cee00840455355821c5e2fee6/images/lovelance_cards.png">
+![Screenshot of Home-Assistant Cards](/images/lovelance_cards.png)<br /><br />
+
 Have fun.
