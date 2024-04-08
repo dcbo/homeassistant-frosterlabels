@@ -42,18 +42,18 @@ There are two Templates
     * The Field `Schlüsselzuordnung` (maybe `keyvalue` in English) contains the numbers of the template as handled by the printer.
   * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) <br /><br />
 ![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)<br />
-## 3. Activate WiFi on the Printer
+## Activate WiFi on the Printer
   * Set the Printer that it can be accessed via WiFi and write down his IP-Address e.g.: `203.0.113.80`
-## 4. Test Template Print
+## Test Template Print
   * To test the Template-Printing via WiFi use any Unix Shell with netcat ant type:<br />
     `echo -e "^II\n^TS002\nBolognese\t550g\t22.02.2022\n^FF" | nc -N 203.0.113.80 9100`<br />
-    be sure to change the IP-Adress to the one of your printer.
+    be sure to change the IP-Address to the one of your printer.
 
 # Store python-script in /config folder
   * Store the python-scripts <br />
     `print_t1.py` and <br />
     `print_t2.py` <br />
-    in the Config-Folder of your Home-Assistant installation<br /> (where your configuration.yaml is stored).
+    in the Config-Folder of your Home-Assistant installation (where your configuration.yaml is stored).
   * Edit the python-scripts
     * Change `host = '203.0.113.80'` to match the IP-Address of your Printer
   * Test python-scripts by running the follwing commands
@@ -61,12 +61,14 @@ There are two Templates
     * `python3 print_t2.py -p "Bolognese" -m "666g"`
 
 # Add Shell-Command to your configuration.yaml 
-<code yaml>
+append to your configuration.yaml 
+
+```
 shell_command:
   # Print labels on Brother QL810W
   print_t1: 'python print_t1.py -t "{{ states("input_text.label_text") }}"'
   print_t2: 'python print_t2.py -p "{{ states("input_text.label_produkt") }}" -m "{{ states("input_text.label_menge") }}"'
-</code>
+```
 
 # Add Helpers to Home-Assistant 
 I have Boxes in different Colors in square and rectangular and covers in other colors.<br />
