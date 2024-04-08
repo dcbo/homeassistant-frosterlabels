@@ -124,4 +124,6 @@ You'll find the yaml-code of the cards in the `/lovelance`-directory.
   * activate `yaml`-mode 
   * paste code from `/lovelance`-directory
 
+![Screenshot of Home-Assistant Cards](/images/lovelance_cards.png)<br />
+
 Have fun.
