@@ -2,10 +2,5 @@ alias: Print Text Label
 sequence:
   - service: shell_command.print_t1
     data: {}
-  - service: notify.ohs_debug
-    data:
-      message: "{{states(\"input_text.label_text\")}}"
-      title: "*Text Label*"
-    enabled: false
 mode: single
 icon: mdi:printer

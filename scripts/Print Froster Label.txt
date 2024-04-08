@@ -1,13 +1,6 @@
 alias: Print Froster Label
 sequence:
   - service: shell_command.print_t2
-    data: {}
-  - service: notify.ohs_debug
-    data:
-      message: >-
-        {{states("input_text.label_produkt")}},
-        {{states("input_text.label_menge")}}, {{ now().strftime('%d.%m.%Y') }}
-      title: "*Froster Label*"
-    enabled: false
+    data: {}  
 mode: single
 icon: mdi:printer
