@@ -9,7 +9,8 @@ To connect the Power of Home-Assistant with my froster I use the following Workf
     * Color of the Cover
   - by pressing a Button 
     - A label is printed with "Product", "Weight/Amount" and "actual Date"
-    - The Item is added to a ToDo-List calles froster.
+    - The Item is added to a ToDo-List called **froster**.
+
 Now I am able to see the content of my froster in the ToDo list. When I take out the Items, i can check them in the List and they gonna be deleted from the List.
 
 ## Requirements 
@@ -42,3 +43,5 @@ You'l find my templates is located in the folder p-touch-templates, this should 
     `echo -e "^II\n^TS002\nBolognese\t550g\t22.02.2022\n^FF" | nc -N 203.0.113.80 9100`<br />
     be sure to change the IP-Adress to the one of your printer.
 
+# Add Command to Home-Assistant to Print Template 
+As the Extension `python_script` does not support `import` we will store a python-skript in the `/config` Directory and call it with `shell-command`. 
