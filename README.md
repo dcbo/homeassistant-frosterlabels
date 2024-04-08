@@ -22,5 +22,6 @@ If you don't have this printer you have to find a possibility to print a label u
 My Home-Assistant runs as a Docker-Container, but I think this can also be applied to other Home-Assistant ways of installation.
 
 # Label Template 
-First you will have to design your Label with the P-Touch Label Software. mine 
+First you will have to design your Label with the P-Touch Label Software. You'l find my templates is located in the folder p-touch-templates
+`c:\Users\$USER\AppData\Roaming\Brother\P-touch Editor\LayoutStyle\Roll\`
 
