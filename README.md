@@ -36,12 +36,13 @@ There are two Templates
   * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by  
   * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br />
     In the German Version it is done via `Datei/Vorlage übertragen/übertragen`<br /><br />
-![Screenshot of P-Touch Editor](/images/transfer_editor.png)<br />
+<img src="https://github.com/dcbo/homeassistant-frosterlabels/images/transfer_editor.png" width="500"><br />
   * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template position, wehre it is stored in the printer.
     * The Printer must bee connected via USB.
     * The Field `Schlüsselzuordnung` (maybe `keyvalue` in English) contains the numbers of the template as handled by the printer.
   * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) <br /><br />
-![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)<br />
+  <img src="https://github.com/dcbo/homeassistant-frosterlabels/images/transfer_manager.png"><br />
+
 ## Activate WiFi on the Printer
   * Set the Printer that it can be accessed via WiFi and write down his IP-Address e.g.: `203.0.113.80`
 ## Test Template Print
@@ -60,9 +61,9 @@ There are two Templates
     * `python3 print_t1.py -t "Hello World"`
     * `python3 print_t2.py -p "Bolognese" -m "666g"`
 
-# Settings in Home assistant 
+# Settings in Home Assistant 
 ## Add Shell-Command to your configuration.yaml 
-append to your configuration.yaml 
+append this to your configuration.yaml 
 
 ```
 shell_command:
@@ -73,7 +74,7 @@ shell_command:
 
 ## Add Helpers to Home-Assistant 
 I have containers and covers in different colors and in squared and rectangular shapes.<br />
-I store Container- and Cover-Color as well as geometry to be able to find a desires box easier in the froster.<br />
+I store Container- and Cover-Color as well as geometry to be able to find a desired container easier in the froster.<br />
 To meet this requirements, we need the following helpers, you may change them to meet your needs.<br />
 ### Text
   * `Helper/Add Helper/Text`
@@ -124,6 +125,5 @@ You'll find the yaml-code of the cards in the `/lovelance`-directory.
   * activate `yaml`-mode 
   * paste code from `/lovelance`-directory
 
-![Screenshot of Home-Assistant Cards](/images/lovelance_cards.png)<br />
-
+<img src="https://github.com/dcbo/homeassistant-frosterlabels/images/lovelance_cards.png">
 Have fun.
