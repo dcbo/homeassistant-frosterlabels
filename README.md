@@ -22,6 +22,10 @@ If you don't have this printer you have to find a possibility to print a label u
 My Home-Assistant runs as a Docker-Container, but I think this can also be applied to other Home-Assistant ways of installation.
 
 # Label Template 
-First you will have to design your Label with the P-Touch Label Software. You'l find my templates is located in the folder p-touch-templates
-`c:\Users\$USER\AppData\Roaming\Brother\P-touch Editor\LayoutStyle\Roll\`
-
+Here i show you howto setup the Brother QL 810W Label Printer.
+## 1. design your Label with the P-Touch Label Software. 
+You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.
+## 2. Transfer Templates to the Printer
+  * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by
+  * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br>
+    In the German Version it is done via `Datei/Vorlage übertragen/übertragen`
