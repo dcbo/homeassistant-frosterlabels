@@ -24,7 +24,7 @@ If you don't own this printer you have to find a possibility to print a label us
 ## Environment 
 My Home-Assistant runs as a Docker-Container, but I think this tutorial can also be applied to other Home-Assistant types of installation.
 
-# Label Template 
+# Brother QL 810W Label Templates
 Howto generate and store Templates for the Brother QL 810W Label Printer.
 ## Design your Label with the P-Touch Label Software. 
 You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.<br />
@@ -60,7 +60,8 @@ There are two Templates
     * `python3 print_t1.py -t "Hello World"`
     * `python3 print_t2.py -p "Bolognese" -m "666g"`
 
-# Add Shell-Command to your configuration.yaml 
+# Settings in Home assistant 
+## Add Shell-Command to your configuration.yaml 
 append to your configuration.yaml 
 
 ```
@@ -70,11 +71,11 @@ shell_command:
   print_t2: 'python print_t2.py -p "{{ states("input_text.label_produkt") }}" -m "{{ states("input_text.label_menge") }}"'
 ```
 
-# Add Helpers to Home-Assistant 
-I have Boxes in different Colors in square and rectangular and covers in other colors.<br />
-I store Box and Cover-Color as well as geometry to be able to find a desires box easier.<br />
-To mmet this requirements, we need the following Helpers, you can change them to meet your needs.<br />
-## Text
+## Add Helpers to Home-Assistant 
+I have containers and covers in different colors and in squared and rectangular shapes.<br />
+I store Container- and Cover-Color as well as geometry to be able to find a desires box easier in the froster.<br />
+To meet this requirements, we need the following helpers, you may change them to meet your needs.<br />
+### Text
   * `Helper/Add Helper/Text`
     * "name": "Text"
     * "min": 0,
@@ -90,7 +91,7 @@ To mmet this requirements, we need the following Helpers, you can change them to
     * "min": 0,
     * "max": 10,
     * Edit Helper and set ID to `input_text.label_menge` 
-## Dropdowns
+### Dropdowns
   * `Helper/Add Helper/Dropdown`
     * "name": "Dose"
     * "icon": "mdi:cog-box"
@@ -107,7 +108,7 @@ To mmet this requirements, we need the following Helpers, you can change them to
     * "options": "square", "rectangular"
     * Edit Helper and set ID to `input_select.form` 
     
-# Add three Scripts to Home-Assistant 
+## Add three Scripts to Home-Assistant 
 You'll find the yaml-code of the scripts in the `/scripts`-directory.
   * `Scripts/Add Scripts/Yaml`
   * paste the scripts <br />
@@ -115,7 +116,7 @@ You'll find the yaml-code of the scripts in the `/scripts`-directory.
     `Print Froster Label.txt` and <br />
     `Print Froster Label List.txt` <br />
   
-# Add cards to your Dashboard
+## Add cards to your Dashboard
 You'll find the yaml-code of the cards in the `/lovelance`-directory.
   * `goto a dashboard of your coice`
   * `edit`
