@@ -29,3 +29,6 @@ You'l find my templates is located in the folder p-touch-templates, this should 
   * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by
   * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br>
     In the German Version it is done via `Datei/Vorlage übertragen/übertragen`
+
+![Screenshot of P-Touch Editor](/images/transfer_template.png)
+
