@@ -18,26 +18,30 @@ When I take Items out, i can check them and they gonna be deleted from the List.
 ## Requirements 
    * Label Printer **Brother QL 810W**
 
-The Brother QL 810W has the possibility to store a template and print this template with Ad-Hoc provided date with a simple TCP/IP packet. 
-If you don't have this printer you have to find a possibility to print a label using a shell command e.g.: `/usr/local/bin/printlabel -p PRODUCT -m AMMOUNT`
+The Brother QL 810W has the possibility to store a template and print this template with Ad-Hoc provided date with a simple TCP/IP packet. <br />
+If you don't own this printer you have to find a possibility to print a label using a shell command e.g.: `/usr/local/bin/printlabel -p PRODUCT -m AMMOUNT`
 
 ## Environment 
-My Home-Assistant runs as a Docker-Container, but I think this can also be applied to other Home-Assistant ways of installation.
+My Home-Assistant runs as a Docker-Container, but I think this tutorial can also be applied to other Home-Assistant types of installation.
 
 # Label Template 
-Here i show you howto setup the Brother QL 810W Label Printer.
-## 1. design your Label with the P-Touch Label Software. 
-You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.
-## 2. Transfer Templates to the Printer
+Howto generate and store Templates for the Brother QL 810W Label Printer.
+## Design your Label with the P-Touch Label Software. 
+You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.<br />
+There are two Templates
+  * `template_text.lbx` only one textfield
+  * `template_froster.lbx` three textfields for product, ammount and date.
+
+## Transfer Templates to the Printer
   * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by  
   * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br />
-    In the German Version it is done via `Datei/Vorlage übertragen/übertragen`
-![Screenshot of P-Touch Editor](/images/transfer_editor.png)
-  * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template as handles by the printer.
-    * The Printer is connected vis USB
+    In the German Version it is done via `Datei/Vorlage übertragen/übertragen`<br /><br />
+![Screenshot of P-Touch Editor](/images/transfer_editor.png)<br />
+  * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template position, wehre it is stored in the printer.
+    * The Printer must bee connected via USB.
     * The Field `Schlüsselzuordnung` (maybe `keyvalue` in English) contains the numbers of the template as handled by the printer.
-  * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) 
-![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)
+  * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) <br /><br />
+![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)<br />
 ## 3. Activate WiFi on the Printer
   * Set the Printer that it can be accessed via WiFi and write down his IP-Address e.g.: `203.0.113.80`
 ## 4. Test Template Print
