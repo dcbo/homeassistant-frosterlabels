@@ -1,17 +1,19 @@
 # homeassistant-frosterlabels
-To connect the Power of Home-Assistant with a froster
+To connect the Power of Home-Assistant with Label-Printer to print Froster-Labels and maintain a List of the Content of your Froster.
 # Overview 
-To connect the Power of Home-Assistant with my froster I use the following Workflow:
-  - In the Gui I enter the details of a product being added to the froster. Additional Infos can be entered in my case: 
+To print Froster-Labels and add the items to the Content-List of my Froster I use the following Workflow:
+  - In the Gui I enter the details of a product being added to the froster. <br />
+    Additional Infos can be entered in my case: 
     * Weight/Amount
-    * Color of the Box
-    * Format of the Box
+    * Color of the Container
     * Color of the Cover
+    * Format of the Container
   - by pressing a Button 
-    - A label is printed with "Product", "Weight/Amount" and "actual Date"
-    - The Item is added to a ToDo-List called **froster**.
+    - A label is printed with "Product", "Weight/Amount" and the actual Date and
+    - the Item is added to a ToDo-List called **froster**.
 
-Now I am able to see the content of my froster in the ToDo list. When I take out the Items, i can check them in the List and they gonna be deleted from the List.
+Now I am able to see the content of my froster in the ToDo list. <br />
+When I take Items out, i can check them and they gonna be deleted from the List.
 
 ## Requirements 
    * Label Printer **Brother QL 810W**
