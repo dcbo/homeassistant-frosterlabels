@@ -26,9 +26,13 @@ Here i show you howto setup the Brother QL 810W Label Printer.
 ## 1. design your Label with the P-Touch Label Software. 
 You'l find my templates is located in the folder p-touch-templates, this should be a good point to start with.
 ## 2. Transfer Templates to the Printer
-  * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by
+  * This can be done with the `P-Touch Transfer Manager` (I used Version 2.5.004) or by  
   * starting the `P-Touch Transfer Manager` from the `P-Touch Editor` <br>
     In the German Version it is done via `Datei/Vorlage übertragen/übertragen`
+  * You have to take care, that the `Schlüsselzuordnung` contains the numbers of the template as handles by the printer.
+    * The Printer is connected vis USB
+    * The Field `Schlüsselzuordnung` (maybe `keyvalue` in English) contains the numbers of the template as handled by the printer.
+  * Then you can transfer the Templates to Printer by clicking `Übertragen` (maybe `transfer` in English) 
 
-![Screenshot of P-Touch Editor](/images/transfer_template.png)
-
+![Screenshot of P-Touch Editor](/images/transfer_editor.png)
+![Screenshot of P-Touch Transfer Manager](/images/transfer_manager.png)
