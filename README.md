@@ -96,26 +96,31 @@ To meet this requirements, we need the following helpers, you may change them to
   * `Helper/Add Helper/Dropdown`
     * "name": "Dose"
     * "icon": "mdi:cog-box"
-    * "options": "transparent", "red", "green", "yellow", "blue"
-    * Edit Helper and set ID to `input_select.dose` 
+    * "options": "transparent", "rot", "grün", "gelb", "blau"
+    * Edit Helper and set ID to `input_select.dosenfarbe` 
   * `Helper/Add Helper/Dropdown`
     * "name": "Deckel"
     * "icon": "mdi:checkbox-blank-circle-outline"
-    * "options": "green", "yellow", "blue"
-    * Edit Helper and set ID to `input_select.deckel` 
+    * "options": "grün", "gelb", "blau"
+    * Edit Helper and set ID to `input_select.deckelfarbe` 
   * `Helper/Add Helper/Dropdown`
     * "name": "Form"
     * "icon": "mdi:rectangle-outline"
-    * "options": "square", "rectangular"
-    * Edit Helper and set ID to `input_select.form` 
+    * "options": "Originalverpackung", "qwuadratisch", "rechteckig"
+    * Edit Helper and set ID to `input_select.dosenform` 
     
-## Add three Scripts to Home-Assistant 
+## Add thist Scripts to Home-Assistant 
 You'll find the yaml-code of the scripts in the `/scripts`-directory.
-  * `Scripts/Add Scripts/Yaml`
-  * paste the scripts <br />
-    `Print Text Label.txt`, <br />
-    `Print Froster Label.txt` and <br />
-    `Print Froster Label List.txt` <br />
+Add the Froster Manager Script:
+  * `Settings/Automations & Scenes/Scripts/New ScriptCreate/New Script`
+    * Name: Froster Manager
+    * Entity-ID: script.froster_manager<br />
+    * Switch to YAML Mode and paste: `Frostermanager.yaml`, <br />
+Add the Print Test Label Script:
+  * `Settings/Automations & Scenes/Scripts/New ScriptCreate/New Script`
+    * Name: Print Text Label
+    * Entity-ID: script.print_text_label<br />
+    * Switch to YAML Mode and paste: `PrintTextLabel.yaml`, <br />
   
 ## Add cards to your Dashboard
 You'll find the yaml-code of the cards in the `/lovelance`-directory.
@@ -125,6 +130,8 @@ You'll find the yaml-code of the cards in the `/lovelance`-directory.
   * activate `yaml`-mode 
   * paste code from `/lovelance`-directory<br /><br />
 
-![Screenshot of Home-Assistant Cards](/images/lovelance_cards.png)<br /><br />
+![Screenshot of Home-Assistant Cards](/images/lovelance_froster_list.png)<br /><br />
+![Screenshot of Home-Assistant Cards](/images/lovelance_froster_product.png)<br /><br />
+![Screenshot of Home-Assistant Cards](/images/lovelance_label_print.png)<br /><br />
 
 Have fun.

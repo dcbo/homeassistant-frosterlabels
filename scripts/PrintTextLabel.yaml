@@ -2,5 +2,6 @@ alias: Print Text Label
 sequence:
   - service: shell_command.print_t1
     data: {}
+    alias: Print Text Label
 mode: single
 icon: mdi:printer

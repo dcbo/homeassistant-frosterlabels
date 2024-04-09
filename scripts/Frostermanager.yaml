@@ -1,0 +1,69 @@
+alias: Froster Manager
+sequence:
+  - alias: Etikett Drucken
+    if:
+      - condition: template
+        value_template: "{{print}}"
+        alias: Parameter print = true?
+    then:
+      - service: shell_command.print_t2
+        data: {}
+        enabled: true
+        alias: Etikett Drucken
+  - alias: Zur Liste hinzufügen
+    if:
+      - condition: template
+        value_template: "{{add_to_list}}"
+        alias: Parameter add_to_list = true?
+    then:
+      - if:
+          - alias: Wenn Dose = Originalverpackung
+            condition: state
+            entity_id: input_select.dosenform
+            state: Originalverpackung
+        then:
+          - service: todo.add_item
+            metadata: {}
+            data:
+              item: "{{states(\"input_text.label_produkt\")}}"
+              description: >-
+                {{states("input_text.label_menge")}}, 
+                Originalverpackung            
+              due_date: "{{ now().strftime('%Y-%m-%d')}}"
+            target:
+              entity_id: todo.gefrierer
+            enabled: true
+            alias: Eintrag zur To-do-Liste Gefrierer, Ohne Farbe und Form
+        else:
+          - service: todo.add_item
+            metadata: {}
+            data:
+              item: "{{states(\"input_text.label_produkt\")}}"
+              description: >-
+                {{states("input_text.label_menge")}}, Dose
+                {{states("input_select.dosenfarbe")}},
+                {{states("input_select.dosenform")}}, Deckel
+                {{states("input_select.deckelfarbe")}}  
+              due_date: "{{ now().strftime('%Y-%m-%d')}}"
+            target:
+              entity_id: todo.gefrierer
+            enabled: true
+            alias: >-
+              Eintrag zur To-do-Liste Gefrierer, Mit Dosen-, Deckelfarbe und
+              Form
+        alias: Add to Froster-List
+mode: single
+icon: mdi:fridge-alert-outline
+fields:
+  print:
+    selector:
+      boolean: {}
+    name: Print
+    description: Soll ein Etikett gedruckt werden
+    required: true
+  add_to_list:
+    selector:
+      boolean: {}
+    name: add to List
+    description: Soll das Produkt zur Liste hinzugefügt werden
+    required: true

@@ -1,0 +1,42 @@
+type: entities
+entities:
+  - entity: input_text.label_produkt
+    name: Inhalt
+  - entity: input_text.label_menge
+  - entity: input_select.dosenform
+  - entity: input_select.dosenfarbe
+  - entity: input_select.deckelfarbe
+title: Gefrier-Etiketten
+footer:
+  type: buttons
+  entities:
+    - entity: input_text.label_produkt
+      icon: mdi:printer-pos
+      name: Label Drucken
+      tap_action:
+        action: call-service
+        service: script.froster_manager
+        target: {}
+        data:
+          print: true
+          add_to_list: false
+    - entity: input_text.label_produkt
+      icon: mdi:printer-pos
+      name: Drucken & in Liste
+      tap_action:
+        action: call-service
+        service: script.froster_manager
+        target: {}
+        data:
+          print: true
+          add_to_list: true
+    - entity: input_text.label_produkt
+      icon: mdi:list-box-outline
+      name: Nur in Liste
+      tap_action:
+        action: call-service
+        service: script.froster_manager
+        target: {}
+        data:
+          print: false
+          add_to_list: true

@@ -1,6 +1,0 @@
-alias: Print Froster Label
-sequence:
-  - service: shell_command.print_t2
-    data: {}  
-mode: single
-icon: mdi:printer

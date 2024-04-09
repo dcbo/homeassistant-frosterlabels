@@ -2,13 +2,13 @@ type: entities
 entities:
   - entity: input_text.label_text
     name: Inhalt
-title: Print Label
+title: Etikett
 footer:
   type: buttons
   entities:
     - entity: input_text.label_produkt
       icon: mdi:printer-pos
-      name: Print a Label
+      name: Etikett drucken
       tap_action:
         action: call-service
         service: script.print_text_label
